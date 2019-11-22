@@ -1,0 +1,8 @@
+<div class="card m-3">
+  <div class="card-body">
+    <h5 class="card-title" appHighlight color="text-success">{{this.post.title}}</h5>
+    <p class="card-text">{{this.post.summary}}</p>
+    <a (click)="onReadBtn()" class="btn btn-primary text-white" [class.btn-warning]="this.readflag">{{this.readText}}</a>
+     <a (click)="onFavBtn()" class="btn btn-secondary ml-2 text-white" [class.btn-danger]="this.post.isFav">{{this.favText}}</a>
+  </div>
+</div>

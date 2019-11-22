@@ -1,0 +1,7 @@
+<ul class="pagination ml-3 justify-content-center">
+	<li class="page-item mr-1"><button class="btn btn-outline-primary" (click)="onPrevious()" [disabled]="this.selected < 1">Previous</button></li>
+    <li class="page-item" *ngFor="let page of pageList; let i = index"  [class.active]="selected==i">
+		<a class="page-link" (click)="onSelect(i)">{{i+1}}</a>
+	</li>
+	<li class="page-item ml-1"><button class="btn btn-outline-primary" (click)="onNext()" [disabled]="this.selected >= this.pageList.length-1">Next</button></li>
+</ul>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Angular Blog</a>
+		</div>
+		<div class="navbar-right">
+			<button class="m-2 btn btn-light" (click)="onExpandAll()"
+				[class.btn-dark]="this.expFlag">{{this.expText}}</button>
+			<button class="m-2 btn btn-light" (click)="onFavAll()"
+				[class.btn-dark]="this.favFlag">{{this.favText}}</button>
+		</div>
+	</div>
+</nav>
+<div class="container" style="margin-top: 100px">
+	<div class="row float-right">
+		<app-paginator class="float-right" [numOfPages]="blogPost.length" (pageNumberClick)="onUpdatePage($event)">
+		</app-paginator>
+	</div>
+
+	<div class="row">
+		<app-blog-post-tile *ngFor="let post of blogPost[currentPage]" [post]="post" #tile>
+		</app-blog-post-tile>
+
+	</div>
+
+	<!-- <div class="row float-right">
+		<app-paginator class="float-right" [numOfPages]="blogPost.length" (pageNumberClick)="onUpdatePage($event)">
+		</app-paginator>
+	</div> -->
+</div>
